@@ -1,0 +1,28 @@
+<h2>Hello World</h2>
+<h3><%= @title %></h3>
+<table>
+	<thead>
+		<tr>
+			<th><b>First</b></th>
+			<th><b>Last</b></th>
+		</tr>		
+	</thead>
+	<tbody>
+		<% @db.each do |db_entry| %>
+		<tr>
+			<td><%=db_entry.attributes[:first_name]%></td>
+			<td><%=db_entry.attributes[:last_name]%></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+
+
+
+<form method="POST" action="/users">
+  First name:<br>
+  <input type="text" name="firstname"><br>
+  Last name:<br>
+  <input type="text" name="lastname">
+  <button type="Submit">Add User</button>
+</form>
